@@ -33,27 +33,34 @@ import { BlocklyXmlService } from "src/app/_services/blocklyXml.service";
   providers: [BlocklyXmlService]
 })
 export class BlocklyComponent implements OnInit {
-  public blocklyXml = "";
+  public blocklyXml;
 
   constructor(private blocklyXmlService: BlocklyXmlService) {}
 
-  ngOnInit() {
-    const xmlData = this.blocklyXmlService
-      .getBlocklyXml()
-      .subscribe(xmlString => console.log(xmlString));
-
-    console.log("This is xmlData: ", xmlData);
-
+  createBlocklyDiv(xml: string) {
     const blocklyDiv = document.getElementById("blocklyDiv");
 
-    Blockly.inject(blocklyDiv, {
-      readOnly: false,
-      move: {
-        scrollbars: true,
-        drag: true,
-        wheel: true
-      },
-      toolbox: this.blocklyXml
-    } as Blockly.BlocklyOptions);
+    // const parser = new DOMParser();
+    // this.blocklyXml = parser.parseFromString(xml, "application/xml");
+
+    // console.log("This is blocklyXml: ", this.blocklyXml);
+
+    // Blockly.inject(blocklyDiv, {
+    //   readOnly: false,
+    //   move: {
+    //     scrollbars: true,
+    //     drag: true,
+    //     wheel: true
+    //   },
+    //   toolbox: this.blocklyXml
+    // } as Blockly.BlocklyOptions);
+
+    blocklyDiv.innerHTML = xml;
+  }
+
+  ngOnInit() {
+    this.blocklyXmlService
+      .getBlocklyXml()
+      .subscribe(xmlString => this.createBlocklyDiv(xmlString));
   }
 }

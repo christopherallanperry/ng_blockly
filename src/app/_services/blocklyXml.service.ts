@@ -1,13 +1,5 @@
 import { Injectable } from "@angular/core";
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse
-} from "@angular/common/http";
-// import "rxjs/add/operator/catch";
-// import { catchError } from "rxjs/operators";
-// import { Observable } from "rxjs";
-// import { IBlocklyXml } from "../../assets/blockly/data/interface";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
@@ -21,17 +13,15 @@ export class BlocklyXmlService {
     return this.http.get(this.url, {
       headers: new HttpHeaders()
         .set("Content-Type", "text/xml")
+        .set("Accept", "text/xml")
         .append("Access-Control-Allow-Methods", "GET")
         .append("Access-Control-Allow-Origin", "*")
         .append(
           "Access-Control-Allow-Headers",
           "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"
         ),
+      observe: "body",
       responseType: "text"
     });
   }
-
-  // errorHandler(error: HttpErrorResponse) {
-  //   return Observable.throwError(error.message || "Server Error");
-  // }
 }
