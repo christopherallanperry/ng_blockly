@@ -23,8 +23,8 @@
 
 import { Component, OnInit } from "@angular/core";
 
-import * as Blockly from "blockly"; // Includes Blockly core, Blockly built-in blocks, the JavaScript generator and the English lang files.
 import { BlocklyXmlService } from "src/app/_services/blocklyXml.service";
+import * as Blockly from "blockly"; // Includes Blockly core, Blockly built-in blocks, the JavaScript generator and the English lang files.
 
 @Component({
   selector: "app-blockly",
@@ -33,7 +33,7 @@ import { BlocklyXmlService } from "src/app/_services/blocklyXml.service";
   providers: [BlocklyXmlService]
 })
 export class BlocklyComponent implements OnInit {
-  public blocklyXml;
+  // public blocklyXml;
 
   constructor(private blocklyXmlService: BlocklyXmlService) {}
 
@@ -42,18 +42,21 @@ export class BlocklyComponent implements OnInit {
 
     // const parser = new DOMParser();
     // this.blocklyXml = parser.parseFromString(xml, "application/xml");
+    // this.blocklyXml = xml;
 
-    // console.log("This is blocklyXml: ", this.blocklyXml);
-
-    // Blockly.inject(blocklyDiv, {
-    //   readOnly: false,
-    //   move: {
-    //     scrollbars: true,
-    //     drag: true,
-    //     wheel: true
-    //   },
-    //   toolbox: this.blocklyXml
-    // } as Blockly.BlocklyOptions);
+    // if (xml.length > 0) {
+    //   Blockly.inject(blocklyDiv, {
+    //     readOnly: false,
+    //     move: {
+    //       scrollbars: true,
+    //       drag: true,
+    //       wheel: true
+    //     },
+    //     toolbox: `${xml}`
+    //   } as Blockly.BlocklyOptions);
+    // } else {
+    //   console.log("XML data is not here yet.");
+    // }
 
     blocklyDiv.innerHTML = xml;
   }

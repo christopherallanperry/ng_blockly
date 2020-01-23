@@ -307,4 +307,9 @@
   <!-- <sep></sep> -->
   <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
   <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+  <category name="Custom">
+    <block type="block_test">
+      <field name="TESTOPTIONS">OPTIONONE</field>
+    </block>
+  </category>
 </xml>
