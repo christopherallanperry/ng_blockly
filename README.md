@@ -40,6 +40,6 @@ ng serve
 
 ## Browse
 
-Open [http://localhost:3000/](http://localhost:3000/) when using `npm run start`, or [http://localhost:3000/](http://localhost:4200/) when using `ng serve`
+Open [http://localhost:3000/](http://localhost:3000/) when using `npm run start`, or [http://localhost:4200/](http://localhost:4200/) when using `ng serve`
 
 Don't ask me why...
