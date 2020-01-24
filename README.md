@@ -12,7 +12,7 @@ This implementation features:
 
 ## Issues / Concerns
 
-The following should be noted:
+The following should be noted when running the app:
 
 - The `Blockly.inject()` method is currently commented out and the toolbox XML is being rendered direction to the DOM in `all/components/blockly/blockly.component.ts`, as the method doesn't appear to be passing the XML to the browser - see [Angular Sample - XML supplied to Blockly.inject does not appear in browser](https://github.com/google/blockly-samples/issues/50) for further details.
 - The features listed below are not currently operating, and are thought to be related to the issue above:
