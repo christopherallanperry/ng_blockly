@@ -1,3 +1,5 @@
+// Custom block(s) definition
+
 Blockly.Blocks["block_test"] = {
   init: function() {
     this.appendValueInput("NAME")
@@ -18,6 +20,7 @@ Blockly.Blocks["block_test"] = {
   }
 };
 
+// Generator stub
 Blockly.JavaScript["block_test"] = function(block) {
   var dropdown_testoptions = block.getFieldValue("TESTOPTIONS");
   var value_name = Blockly.JavaScript.valueToCode(
