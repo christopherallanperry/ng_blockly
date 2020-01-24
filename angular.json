@@ -32,7 +32,7 @@
               "node_modules/blockly/dart.js",
               "src/assets/blockly/code.js",
               "src/assets/blockly/msg/en.js",
-              "src/assets/blockly/custom_blocks/block_test.js"
+              "src/assets/blockly/custom_blocks/custom_block_test.js"
             ]
           },
           "configurations": {

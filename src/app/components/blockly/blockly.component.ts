@@ -44,19 +44,19 @@ export class BlocklyComponent implements OnInit {
     // this.blocklyXml = parser.parseFromString(xml, "application/xml");
     // this.blocklyXml = xml;
 
-    // if (xml.length > 0) {
-    //   Blockly.inject(blocklyDiv, {
-    //     readOnly: false,
-    //     move: {
-    //       scrollbars: true,
-    //       drag: true,
-    //       wheel: true
-    //     },
-    //     toolbox: `${xml}`
-    //   } as Blockly.BlocklyOptions);
-    // } else {
-    //   console.log("XML data is not here yet.");
-    // }
+    if (xml.length > 0) {
+      Blockly.inject(blocklyDiv, {
+        readOnly: false,
+        move: {
+          scrollbars: true,
+          drag: true,
+          wheel: true
+        },
+        toolbox: `${xml}`
+      } as Blockly.BlocklyOptions);
+    } else {
+      console.log("XML data is not here yet.");
+    }
 
     blocklyDiv.innerHTML = xml;
   }
