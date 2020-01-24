@@ -44,6 +44,8 @@ export class BlocklyComponent implements OnInit {
     // this.blocklyXml = parser.parseFromString(xml, "application/xml");
     // this.blocklyXml = xml;
 
+    const textToDom = Blockly.Xml.textToDom(xml);
+
     if (xml.length > 0) {
       Blockly.inject(blocklyDiv, {
         readOnly: false,
@@ -52,13 +54,13 @@ export class BlocklyComponent implements OnInit {
           drag: true,
           wheel: true
         },
-        toolbox: `${xml}`
+        toolbox: textToDom
       } as Blockly.BlocklyOptions);
     } else {
       console.log("XML data is not here yet.");
     }
 
-    blocklyDiv.innerHTML = xml;
+    // blocklyDiv.innerHTML = xml;
   }
 
   ngOnInit() {
