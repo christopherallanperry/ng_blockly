@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { BlocklyComponent } from "./components/blockly/blockly.component";
@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [BrowserModule, HttpClientModule],
   providers: [BlocklyXmlService],
   bootstrap: [AppComponent],
-  exports: [BlocklyComponent]
+  exports: [BlocklyComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}
