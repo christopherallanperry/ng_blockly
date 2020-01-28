@@ -39,12 +39,11 @@ export class BlocklyComponent implements OnInit {
 
   createBlocklyDiv(xml: string) {
     const blocklyDiv = document.getElementById("blocklyDiv");
+    const toolbox = document.getElementById("toolbox");
 
-    // const parser = new DOMParser();
-    // this.blocklyXml = parser.parseFromString(xml, "application/xml");
     // this.blocklyXml = xml;
 
-    const textToDom = Blockly.Xml.textToDom(xml);
+    // const textToDom = Blockly.Xml.textToDom(xml);
 
     if (xml.length > 0) {
       Blockly.inject(blocklyDiv, {
@@ -54,13 +53,14 @@ export class BlocklyComponent implements OnInit {
           drag: true,
           wheel: true
         },
-        toolbox: textToDom
+        toolbox: toolbox
       } as Blockly.BlocklyOptions);
     } else {
-      console.log("XML data is not here yet.");
+      console.log(
+        "The XML data is unavailable. Check to see whether the blocklyXmlService() method is providing a response in ngOnInit()"
+      );
     }
-
-    // blocklyDiv.innerHTML = xml;
+    blocklyDiv.innerHTML = xml;
   }
 
   ngOnInit() {

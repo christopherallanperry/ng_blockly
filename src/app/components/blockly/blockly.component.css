@@ -1,6 +1,9 @@
 #blocklyDiv {
+  /* border: 1px solid red; */
   height: 80%;
   width: 100%;
   position: absolute;
   bottom: 0;
+  /* display: none; */
+  z-index: -10;
 }
